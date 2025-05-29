@@ -142,46 +142,316 @@
 
 % Homework problem 2.4.5
 \begin{homeworkProblem}
+  If the domain of the function $y= 5+ =x$ is the set $\{x | 1 \ge x \ge 9\}$, find the range 
+  of the function and express it as a set.
+  \[
+    \begin{split}
+      DOM = \{x | 1 \ge x \ge 9\} \\
+      RANGE = \{x | 32 \ge x \ge 8\}
+    \end{split}
+  \]  
 \end{homeworkProblem}
 
 % Homework problem 2.4.7
 \begin{homeworkProblem}
+  In the theory of the firm, economists consider the total cost $C$ to be a function of 
+  the output level $Q:C= f(Q)$.
+  \begin{enumerate}
+    \item According to the definition of a function, should each cost figure 
+      be associated with a unique level of output? \\
+      \textbf{Answer:} Not nevesary since there could be multiple outputs $(Q)$ that could 
+      be map to the same $C$ but each $Q$ can only map to one $C$.
+    \item Should each level of output determine a unique cost figure? \\ 
+      \textbf{Answer:} Yes, given that each $Q$ can only map to one $C$.
+
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 2.4.8
 \begin{homeworkProblem}
+   If an output level $Q_1$ can be produced at a cost of $C_1$ , then it must also be possible (by
+being less effcient) to produce $Q_1$ at a cost of $C_1 + \$1$, or  $C_1 + \$2$, and so on. Thus it
+would seem that output Q does not uniquely determine total cost $C$. If so, to write
+$C = f (Q)$ would violate the deffnition of a function. How, in spite of the this reasoning,
+would you justify the use of the function $C = f (Q)$?
+
+\textbf{Answer:} The function would still be valid since adding some cost constant $\forall a\in \mathbb{R}^+$ 
+would only displace the cost function upwards by $a$ units. A cost increas of $a$ units could be described 
+in the following method:
+\[
+  \begin{split}
+    C = f(Q) \\
+    C + a = f(Q) + a ; \forall a \in \mathbb{R}^+
+  \end{split}
+\]
 \end{homeworkProblem}
 
 % Homework problem 2.5.7
 \begin{homeworkProblem}
+  Show that $X^{m/n}= \sqrt[n][x^m] = (\sqrt[n][x])^m$.Spevify the rules applied in each 
+  step.
+  \[
+\begin{split}
+  x^{m/n} &= x^{m \frac{1}{n}} \\
+          &= (x^m)^{\frac{1}{n}} \\
+          &= \sqrt[n][x^m]
+\end{split}
+  \]
+  \[
+\begin{split}
+  x^{m/n} &= x^{m \frac{1}{n}} \\
+          &=  x^{\frac{1}{n} m} \\
+          &= (x^{\frac{1}{n}})^m \\
+          &= (\sqrt[n][x])^m
+\end{split}
+  \]
 \end{homeworkProblem}
 
 % Homework problem 2.5.8
 \begin{homeworkProblem}
+Prove Rule VI and Rule VII:
+		      \begin{enumerate}
+			      \item \textbf{Rule VI:} $(x^m)^n=x^{m \cdot n}$
+			            \begin{proof}
+				            To prove that $(x^m)^n=x^{m \cdot n}$ is true we use the
+				            induction method. First, we prove that:
+				            \[
+					            P_1: (x^m)^1 \Rightarrow x^m = x^m
+				            \]
+				            \[
+					            P_2: (x^m)^2 \Rightarrow x^{m} \cdot x^{m} \Rightarrow x^{m+m} = x^{m \cdot 2}
+				            \]
+				            \[
+					            P_n: (x^m)^n \Rightarrow x^{m}_1 \cdot x^{m}_2 \cdot ... \cdot x^{m}_{n} \Rightarrow x^{m+m+...+m} = x^{m \cdot n}
+				            \]
+				            Then we prove that $P_1$ hold for all $P_{n+1}$, that is:
+				            \[
+					            P_{n+1}: (x^m)^n \Rightarrow x^{m}_1 \cdot x^{m}_2 \cdot ... \cdot x^{m}_{n} \cdot x^{m}_{n+1}
+				            \]
+				            \[
+					            \Rightarrow x^{m \cdot n} \cdot x^{m}
+				            \]
+				            \[
+					            \Rightarrow x^{m \dot n + m} = x^{m \cdot (n+1)}
+				            \]
+				            Therefore $P_{n+1}$ holds for all positive integers n since $P_1 \implies P_{n+1}$.
+			            \end{proof}
+			      \item \textbf{Rule VII:} $x^m \cdot y^m = (x \cdot y)^m$
+			            \begin{proof}
+				            To prove that $x^m \cdot y^m = (x \cdot y)^m$ is true we use the
+				            induction method. First, we prove that:
+				            \[
+					            P_1: x^1 \cdot y^1 \Rightarrow x \cdot y = x \cdot y
+				            \]
+				            \[
+					            P_2: x^2 \cdot y^2 \Rightarrow x \cdot y \cdot x \cdot y \Rightarrow (x \cdot y)^2 = (x \cdot y)^2
+				            \]
+				            \[
+					            P_n: x^m \cdot y^m \Rightarrow x_1 \cdot y_1 \cdot x_2 \cdot y_2 \cdot ... \cdot x_n \cdot y_n \Rightarrow (x \cdot y)^m
+				            \]
+				            Then we prove that $P_1$ hold for all $P_{n+1}$, that is:
+				            \[
+					            P_{n+1}: x^{m+1} \cdot y^{m+1} \Rightarrow x_1 \cdot y_1 \cdot x_2 \cdot y_2 \cdot ... \cdot x_n \cdot y_n \cdot x_{m+1} \cdot y_{m+1}
+				            \]
+				            \[
+					            \Rightarrow (x \cdot y)^{m} \cdot (x \cdot y)_{m+1}
+				            \]
+				            \[
+					            \Rightarrow (x \cdot y)^{m+1}
+				            \]
+				            Therefore $P_{n+1}$ holds for all positive integers n since $P_1 \implies P_{n+1}$.
+			            \end{proof}
+		      \end{enumerate}
+
 \end{homeworkProblem}
 
 % Homework problem 3.2.1
 \begin{homeworkProblem}
+  Given the market model
+  \[
+  \begin{split}
+    Q_d &= Q_s \\
+    Q_d &= 21 - 3P \\ 
+    Q_s &= -4 + 8P \\
+  \end{split}
+\]
+Find $P^*$ and $P^*$ by elimination of variables.
+\[
+\begin{split}
+  Q_d &= Q_s \\
+    Q_d &= 21 - 3P \\ 
+    Q_s &= -4 + 8P \\
+    21 - 3P &= 3P + 8P \\
+    25 &= 11P \\
+    P^*&= \frac{25}{11} \\
+    Q^*&= \frac{156}{11} \\
+\end{split}
+\]
+
+Using the formaulas:
+\[
+\begin{split}
+  P^* &= \frac{a + c}{b + d} \\
+  &= \frac{21 + 4}{3 + 8} \\
+  &= \frac{25}{11} \\ 
+  Q^* &= \frac{ad - bc}{b + d} \\
+      &= \frac{21 \cdot 8 - 3\cdot 4}{3 + 8} \\
+      &= \frac{156}{11}
+\end{split}
+\]
 \end{homeworkProblem}
 
 % Homework problem 3.3.6
 \begin{homeworkProblem}
+  Find the equilibrion solution for each of the following models:
+  \begin{enumerate}
+    \item 
+  \[
+  \begin{split}
+    Q_d &= Q_s \\
+    Q_d &= 3 - P^2 \\ 
+    Q_s &= 6P - 4 \\
+  \end{split}
+\]
+  \textbf{Answer:}
+  \[
+  \begin{split}
+    Q_d &= Q_s \\
+    Q_d &= 3 - P^2 \\ 
+    Q_s &= 6P - 4 \\
+    3 -p^2 &= 6p-4 \\
+    p^2 6p + 7 &= 0 \\
+    (p+7)(p-1) &= 0 \\ 
+    P&=1 \\
+    Q*&=2
+  \end{split}
+\]
+
+\item
+  \[
+  \begin{split}
+    Q_d &= Q_s \\
+    Q_d &= 8 - P^2 \\ 
+    Q_s &= P^2 -2 \\
+    P^2-2 &= 8 - p^2  \\
+    2(P^2 -5) &= 0 \\ 
+    P^* &= \sqrt{5} \\
+    Q*  &= 3
+  \end{split}
+\]
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 3.3.7
 \begin{homeworkProblem}
+  The market equilibrium condition, $Q_d = Q_s$, is often expressed in an equivalent 
+  alternative from, $Q_d - Q_s = 0$, which has the economiv interpretation "excess demand 
+  is zero". Does (3.7) represent this latter version of the equilibrium condition? if not, 
+  supply an appropriate economic interpretation for (3.7).
+  \[
+\begin{split}
+  Q_d &= Q_s \\
+  Q_d - Q_s &= 0\\ 
+  4 - p^2 - 4p + 1 &= 0 \\ 
+  p^2 + 4p - 5 &= 0
+\end{split}
+  \]
 \end{homeworkProblem}
 
-% Homework problem 3.5.3
+% Homework problem 3.4.3
 \begin{homeworkProblem}
+The demand and supply function of a two-commodity market model are as follows: 
+\[
+\begin{split}
+  Q_{d_1} &= 18 - 3 P_1 + P_2 \\ 
+  Q_{d_2} &= 12 + P_1 - 2 P_2 \\ 
+  Q_{s_1} &= -2 + 4P_1 \\ 
+  Q_{s_2} &= -2 + 3 P_2 \\
+  -7p_1 +  P_2 &= -20 \\
+  P_1 + 5 P_2 &= -14 \\ 
+  \begin{bmatrix}
+    -7 & 1 \\
+    1 & -5 \\
+    \end{bmatrix} \begin{bmatrix}
+  P_1 \\ 
+  P_2 \\
+    \end{bmatrix} = \begin{bmatrix}
+  -20 \\ -14
+  \end{bmatrix} \\
+\left[\begin{array}{cc|c}
+-7 & 1 & -20 \\
+1 & -5 & -14 \\
+\end{array}\right] \\ 
+\left[\begin{array}{cc|c}
+1 & -5 & -14 \\
+0 & 1 & \frac{59}{17} \\
+\end{array}\right] \\ 
+\left[\begin{array}{cc|c}
+1 & 0 & \frac{57}{17} \\
+0 & 1 & \frac{59}{19} \\
+\end{array}\right]
+\end{split}
+\]
 \end{homeworkProblem}
 
 % Homework problem 2.5.2
 \begin{homeworkProblem}
+   Let the national-income model be:
+		      \[
+			      \begin{split}
+				      Y &= C + I_0 + G \\
+				      C &= a + b(Y - T_0) \\
+				      G &= gY \\
+			      \end{split}
+		      \]
+		      \begin{enumerate}
+			      \item Identify the endogenous variables.
+
+			            \textbf{Answer:} $Y,C,G$ are endogenous.
+			      \item Give the economic meaning of the parameter g.
+
+			            \textbf{Answer:}
+			      \item Find the equilibrium national income.
+
+			            \textbf{Answer:}
+			      \item What restriction on the parameters is needed for a solution to exist?
+
+			            \textbf{Answer:}
+		      \end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 4.1.2
 \begin{homeworkProblem}
+  Rewrite the market model (3.12) in the format of (4.1) with the variables arranged in
+            the following order: $Q_{d1}$ , $Q_{s1}$ , $Q_{d2}$ , $Q_{s2}$ , $P_1$ , $P_2$ . Write out the coefﬁcient matrix, the
+            variable vector, and the constant vector.
+            \[
+                \begin{bmatrix}
+                    1 & -1 & 0 & 0 & 0 & 0 \\
+                    1 & 0 & 0 & 0 & -a_1 & -a_2 \\
+                    0 & 1 & 0 & 0 & -b_1 & -b_2 \\
+                    0 & 0 & 1 & -1 & 0 & 0 \\
+                    0 & 0 & 1 & 0 & -\alpha_1 & -\alpha_2 \\
+                    0 & 0 & 0 & 1 & \beta_1 & -\beta_2 \\ 
+                \end{bmatrix}
+                \begin{bmatrix}
+                    Q_{d1} \\
+                    Q_{s1} \\
+                    Q_{d2} \\
+                    Q_{s2} \\
+                    P_1 \\
+                    P_2
+                \end{bmatrix}
+                \begin{bmatrix}
+                    0 \\
+                    a_0 \\
+                    b_0 \\
+                    0 \\
+                    \alpha_1 \\
+                    \beta_1 \\
+                \end{bmatrix}
+            \]
+
 \end{homeworkProblem}
 
 % Homework problem 4.1.3
