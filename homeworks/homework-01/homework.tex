@@ -456,38 +456,125 @@ The demand and supply function of a two-commodity market model are as follows:
 
 % Homework problem 4.1.3
 \begin{homeworkProblem}
+  Can the market model (3.6) be rewritten in the format of (4.1)? Why? \\
+            \textbf{Answer:} No, because there is a cuadratic equation, only linear equations can be written in the format of matrixes.
 \end{homeworkProblem}
 
 % Homework problem 4.3.3
 \begin{homeworkProblem}
+  Having sold $n$ items of merchandise t quantities $Q_1, \cdots, Q_n$ and prices $P_1,\cdots, P_n$, howo would you 
+  express the total revenue in (a) $\sum$ notation and (b) vector notation?
+  \begin{itemize}
+    \item 
+      $$
+      \sum_{i=1}^{n} P_i Q_i
+      $$
+    \item 
+      $$
+      \begin{bmatrix}
+        P_1 \\
+        \vdots \\ 
+        P_n
+        \end{bmatrix} \begin{bmatrix}
+          Q_1 & \ldots & Q_n
+          \end{bmatrix}
+      $$
+        \end{itemize}
 \end{homeworkProblem}
 
 % Homework problem 4.3.8
 \begin{homeworkProblem}
+The tringular inequality is written with the weak inequality sign $\ge$, rather than the 
+strict inequality sign $<$. Under what circumstances would the "=" part of the unequality 
+apply?
+
+ \textbf{Answer:} It would apply when one is a liner representation of the other
 \end{homeworkProblem}
 
 % Homework problem 4.4.8
 \begin{homeworkProblem}
+  Name some situations or contexts where the notion of a wighted or unweighted sum 
+  of square may be relevant. 
+
+    \textbf{Answer:} It could be useful you have outliers.
 \end{homeworkProblem}
 
 % Homework problem 4.5.4
 \begin{homeworkProblem}
+  Show that the diagonal matrix 
+  \[
+    \begin{bmatrix}
+      a_{11} & \ldots & 0 \\
+      \vdots & \ddots & \vdots \\
+      0 & \ldots & a_{ij}
+      \end{bmatrix}
+  \]
+  can be idepotent only if each diagonal element is either 1 or 0. How many different 
+  numerical idepotent diagonal matrices of diamension $n \times n$ can be constructed 
+  altogether from such a matrix? \\ 
+  \textbf{Answer:} $2^n$
 \end{homeworkProblem}
 
 % Homework problem 4.6.1
 \begin{homeworkProblem}
+  Given $A = \begin{bmatrix} 0 & 4 \\ -1 & 3 \end{bmatrix}$,  
+  $B = \begin{bmatrix} 3 & -8 \\ 0 & 1\end{bmatrix}$, and 
+  $C = \begin{bmatrix} 1 & 0 & 9 \\ 6 & 1 & 1\end{bmatrix}$, find $A'$, $B'$ and $C'$ 
+
+  \[
+    \begin{split}
+       A' = \begin{bmatrix} 0 & -1 \\ 4 & 3 \end{bmatrix} \\  
+       B' = \begin{bmatrix} 3 & 0 \\ -8 & 1\end{bmatrix} \\
+       C' = \begin{bmatrix} 1 & 6 \\ 0 &1 \\ 9 & 1\end{bmatrix} \\
+    \end{split}
+  \]
 \end{homeworkProblem}
 
 % Homework problem 4.6.2
 \begin{homeworkProblem}
+  Use the matrixes given in Prob. 1 to verify that 
+  \begin{enumerate}
+    \item $(A+B)' = A' + B'$
+      \[
+        \begin{split}
+          (A+B)' &= A' + B' \\
+          \left(\begin{bmatrix} 0 & 4 \\ -1 & 3 \end{bmatrix} + 
+          \begin{bmatrix} 3 & -8 \\ 0 & 1\end{bmatrix}\right)' &=  
+          \begin{bmatrix} 0 & 4 \\ -1 & 3 \end{bmatrix}' + 
+          \begin{bmatrix} 3 & -8 \\ 0 & 1\end{bmatrix}' \\ 
+          \left(  \begin{bmatrix} 3 & -4 \\ -1 & 4 \end{bmatrix}  \right)' &= 
+           \begin{bmatrix} 0 & -1 \\ 4 & 3 \end{bmatrix} + 
+          \begin{bmatrix} 3 & 0 \\ -8 & 1\end{bmatrix} \\ 
+          \begin{bmatrix} 3 & -1 \\ -4 & 4 \end{bmatrix} & = \begin{bmatrix} 3 & -1 \\ -4 & 4 \end{bmatrix}
+        \end{split}
+      \]
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 4.6.6
 \begin{homeworkProblem}
+  Let $A = I - X(X'X)^-X'$
+  \begin{enumerate}
+    \item Must $A$ be square? Must$(X'X)$ be square? Must $X$ be Square?
+      \textbf{Answer:} A must be square, $(X'X)$ has to be also square and $X$ does not 
+      need to be square
+    \item Show that matrix $A$ is idempotent.
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 4.7.1
 \begin{homeworkProblem}
+
 \end{homeworkProblem}
 
+% Homework problem 2 
+\begin{homeworkProblem}
+The textbook case labor supply model uses the utility function $U(c,l)$ where "$c$" 
+is consumption and "$I$" is leisure.
+\begin{enumerate}
+  \item What are the standard assumption imposed on $U(.,.)$
+  \item Justify the alternative model $U(c_1,c_2,l)$ where "$c_1$" and $c_2$ represent the consumption level 
+    of two different goods. What assumptions would you impose on $U(\cdot)$
+\end{enumerate}
+\end{homeworkProblem}
 \end{document}
