@@ -564,7 +564,40 @@ apply?
 
 % Homework problem 4.7.1
 \begin{homeworkProblem}
-
+Consider the situation of a mass layoff (i.e., a factory shuts down) where 1,200 people 
+become unemployed and now begin a job search. In this case there are two states: employed 
+(E) and unemployed (u) with an initial vector 
+$$
+X_0'= \begin{bmatrix} E & U \end{bmatrix} = \begin{bmatrix} 0 & 1,200] \end{bmatrix}
+$$
+Suppose that in any given period an unemployed person will find a job with probability. $.7$ 
+adn will therefore remanin unemployed with a probability of $.3$. Additionally, persons who find themselves 
+employed with probability of $.1$ ( and will have a $.9$ probability of remainin employed).
+\begin{enumerate}
+  \item Set up the Markov transition matrix for this problem. 
+    $$
+  P = \begin{bmatrix} 0.9 & 0.1 \\ 0.7 & 0.3\end{bmatrix}
+    $$
+    \item What will be the number of unemployed people after (i) 2 periods; (ii) 3 periods;
+      (iii) 5 periods; (iv) 10 periods?
+      \begin{enumerate}
+        \item $P_1 = \begin{bmatrix} 0 & 1200 \end{bmatrix} \begin{bmatrix} 0.9 & 0.1 \\ 0.7 & 0.3\end{bmatrix} = \begin{bmatrix} 840 & 360 \end{bmatrix} $ 
+        \item $P_2 = \begin{bmatrix} 840 & 360 \end{bmatrix}  \begin{bmatrix} 0.9 & 0.1 \\ 0.7 & 0.3\end{bmatrix} = \begin{bmatrix} 1008 & 192   \end{bmatrix} $ 
+        \item $P_3 = \begin{bmatrix} 1008 & 192 \end{bmatrix}  \begin{bmatrix} 0.9 & 0.1 \\ 0.7 & 0.3\end{bmatrix} = \begin{bmatrix}  1041.6 & 151.68  \end{bmatrix} $ 
+        \item $P_4 = \begin{bmatrix} 1041.6 & 151.68 \end{bmatrix}  \begin{bmatrix} 0.9 & 0.1 \\ 0.7 & 0.3\end{bmatrix} = \begin{bmatrix} 1058.32 & 150.336 \end{bmatrix} $ 
+      \end{enumerate}
+    \item what is the steady-state level of unemployment?
+      \[
+        \begin{cases}
+          0.9E + 0.7U = E\\
+          0.1E + 0.3U = U \\ 
+          E + U = 1
+        \end{cases} \\
+        U = \frac{1}{8} \\ 
+        E = \frac{7}{8}
+      \]
+      150 people 
+\end{enumerate}
 \end{homeworkProblem}
 
 % Homework problem 2 
@@ -573,8 +606,17 @@ The textbook case labor supply model uses the utility function $U(c,l)$ where "$
 is consumption and "$I$" is leisure.
 \begin{enumerate}
   \item What are the standard assumption imposed on $U(.,.)$
+    \begin{enumerate}
+      \item More is better 
+      \item diminishing marginal utility 
+      \item convexity
+    \end{enumerate}
   \item Justify the alternative model $U(c_1,c_2,l)$ where "$c_1$" and $c_2$ represent the consumption level 
     of two different goods. What assumptions would you impose on $U(\cdot)$
+    
+    \textbf{Answer:} The alternative model where we incorporate multiple consumption is more charatarisitc 
+    of the real world given that we have more than one option of consumption. A representation of the model would be 
+    to pick $c_1$ as a specific consumption and leav $c_2$ as everything else. Overall the assuptions would stay the same. 
 \end{enumerate}
 \end{homeworkProblem}
 \end{document}
