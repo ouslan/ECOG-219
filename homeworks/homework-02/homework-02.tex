@@ -224,15 +224,23 @@ $G_0$    & $\frac{\partial Y}{\partial G_0}$    & Positive \\
   Consider the market model:
   \[
     \begin{split}
-    Q_s &= Q_s \\
-    Q_s &= D(P,Y_0) \\
-    Q_d &= S(P)
+    Q_s &= Q_d \\
+    Q_d &= D(P,Y_0) \\
+    Q_s &= S(P)
     \end{split}
   \]
   \begin{enumerate}
     \item Provide an economic interpretation to each of the equations. In you answers, 
       include the assumptions on the signs of the relevant derivatives. 
+      \begin{enumerate}
+        \item $Q_s = Q_d$ the quantity supplied is equal to the quantity produced ($Q_s,Q_s \in \mathbb{N}$)
+        \item $Q_d = D(P,Y_0)$ the quantity depanded is a function of the price and income ($P,Y_0,D(\cdot) \in \mathbb{R}^+$)
+        \item $Q_s = S(P)$ the quantity supplied is a function of the price ($P,S(\cdot) \in \mathbb{R}^+$)
+      \end{enumerate}
     \item Define the concept of market equilibrium. Provide and explain its mathematical formulation.
+      
+      \textbf{Answer:} The market equilibruim is when the $P^*$ is picked such that $D(P^*,Y_0) = S(P^*)$. $Q^* = D(P^*,Y_0) = S(P^*)$ is 
+      the equilibruim quantity produced
     \item Show that:
       $$
       \frac{dP^*}{dY_0} > 0
@@ -243,9 +251,20 @@ $G_0$    & $\frac{\partial Y}{\partial G_0}$    & Positive \\
       \frac{dQ^*}{dY_0} > 0
       $$
     Where $Q*$ is the equilibrium price. Provide an economic interpretation for this result.
+    \[
+      \begin{split}
+        \frac{dS}{dP} \cdot \frac{dP^*}{dY_0} = \frac{dP^*}{dY_0}  > 0 \\
+      \end{split}
+    \]
+    \textbf{Answer:} An increase in income leads to higher demand, which pushes up both the price and the equilibrium quantity. Suppliers respond to higher prices by increasing supply, leading to a higher $Q^*$
   \item Answer questions c and d using total derivatives.
-
-
+    \[
+      \begin{split}
+        \frac{dS}{dP} \cdot \frac{dP^*}{dY_0} &= \frac{\partial D}{\partial P} \cdot \frac{dP^*}{dY_0} + \frac{\partial D}{\partial Y_0} \\
+        \frac{dP^*}{dY_0} &= \frac{\frac{\partial D}{\partial Y_0}}{\frac{dS}{dP} - \frac{\partial D}{\partial P}} > 0 \\
+        \frac{dQ^*}{dY_0} &= \frac{dS}{dP} \cdot \frac{dP^*}{dY_0} > 0
+      \end{split}
+    \]
   \end{enumerate}
 \end{homeworkProblem}
 
