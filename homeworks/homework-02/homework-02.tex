@@ -151,17 +151,77 @@
   \end{split}
   \]
   \begin{enumerate}
-    \item Define and interpret each of the componnts of the model. 
+    \item Define and interpret each of the components of the model. 
       Identify parameter and variables.
+      \begin{enumerate}
+        \item $Y = C + I_0 + G_0$ Nations income 
+        \item $C = \alpha + \beta (Y - T)$ Consumtion function 
+        \item $T = \gamma + \delta Y$ Tax Function 
+        \item $I,G$ investments and goverment spending are exogenous
+        \item $\alpha$ consumption intercept (minimum consumption when there is no income)
+        \item $\beta$ Marginal propensity to consume 
+        \item $\gamma$ minimum taxes 
+        \item $\delta$ tax rate on income
+      \end{enumerate}
     \item Impose reasonable assumptions on the signs and values of the parameters.
-    \item Solve for the equilibriom income. 
-    \item Obtain an discuss the six comprarative-static derivatives.
+    \begin{enumerate}
+      \item $\alpha > 0$ there is at least some consumption even if there is no income
+      \item $0<\beta <1$ hoesholds consume at least something and not all of their income 
+      \item $\gamma \ge 0$ there is no negitive taxes 
+      \item $I_0 > 0$ There is some investments
+      \item $G_0 > 0$ There is some goverment spending
+    \end{enumerate}
+    \item Solve for the equilibrium income. 
+      Start from:
+    \[
+      \begin{split}
+        Y &= C + I_0 + G_0 \\
+          &= \alpha + \beta (Y - T) + I_0 + G_0 \\
+          &= \alpha + \beta(Y - \gamma - \delta Y) + I_0 + G_0 \\
+          &= \alpha + \beta Y - \beta \gamma - \beta \delta Y + I_0 + G_0 \\
+          &= Y(1 - \beta + \beta \delta) = \alpha - \beta \gamma + I_0 + G_0 \\
+          &= \frac{\alpha - \beta \gamma + I_0 + G_0}{1 - \beta(1 - \delta)}
+      \end{split}
+    \]
+    \item Obtain an discuss the six comparative-static derivatives.
+      Let:
+\[
+Y = \frac{\alpha - \beta \gamma + I_0 + G_0}{1 - \beta(1 - \delta)}
+\]
+
+\textbf{Partial derivatives:}
+
+\begin{align*}
+\frac{\partial Y}{\partial \alpha} &= \frac{1}{1 - \beta(1 - \delta)} > 0 \\
+\frac{\partial Y}{\partial \gamma} &= \frac{-\beta}{1 - \beta(1 - \delta)} < 0 \\
+\frac{\partial Y}{\partial I_0} &= \frac{1}{1 - \beta(1 - \delta)} > 0 \\
+\frac{\partial Y}{\partial G_0} &= \frac{1}{1 - \beta(1 - \delta)} > 0 \\
+\frac{\partial Y}{\partial \delta} &= \frac{\beta(\alpha - \beta \gamma + I_0 + G_0)}{[1 - \beta(1 - \delta)]^2} > 0 \quad \text{(if numerator positive)} \\
+\frac{\partial Y}{\partial \beta} &= \frac{ -\gamma(1 - \beta(1 - \delta)) + (\alpha - \beta \gamma + I_0 + G_0)(1 - \delta) }{[1 - \beta(1 - \delta)]^2} \quad \text{(ambiguous)}
+\end{align*}
+
+\textbf{Summary of signs:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Parameter} & \textbf{Partial Derivative} & \textbf{Sign} \\
+\hline
+$\alpha$ & $\frac{\partial Y}{\partial \alpha}$ & Positive \\
+$\beta$  & $\frac{\partial Y}{\partial \beta}$ & Ambiguous \\
+$\gamma$ & $\frac{\partial Y}{\partial \gamma}$ & Negative \\
+$\delta$ & $\frac{\partial Y}{\partial \delta}$ & Positive (if numerator $> 0$) \\
+$I_0$    & $\frac{\partial Y}{\partial I_0}$    & Positive \\
+$G_0$    & $\frac{\partial Y}{\partial G_0}$    & Positive \\
+\hline
+\end{tabular}
+\end{center}
   \end{enumerate}
 \end{homeworkProblem}
 
 % Problem 2
 \begin{homeworkProblem}
-  COnsider the market model:
+  Consider the market model:
   \[
     \begin{split}
     Q_s &= Q_s \\
@@ -170,20 +230,20 @@
     \end{split}
   \]
   \begin{enumerate}
-    \item Provide an economic interpretation to each of the equaions. In you answers, 
-      include the assumptions on the signs of the relevant derivaties. 
-    \item Define the concept of market equilibriom. Provide and explain its mathematical formulation.
+    \item Provide an economic interpretation to each of the equations. In you answers, 
+      include the assumptions on the signs of the relevant derivatives. 
+    \item Define the concept of market equilibrium. Provide and explain its mathematical formulation.
     \item Show that:
       $$
       \frac{dP^*}{dY_0} > 0
       $$
-    Where $P^*$ is the equilibrium price. Provide an economiv interpretation for this result.
+    Where $P^*$ is the equilibrium price. Provide an economic interpretation for this result.
     \item Show that:
       $$
       \frac{dQ^*}{dY_0} > 0
       $$
-    Where $Q^*$ is the equilibrium price. Provide an economiv interpretation for this result.
-  \item Answer quesitons c and d using total derivatives.
+    Where $Q*$ is the equilibrium price. Provide an economic interpretation for this result.
+  \item Answer questions c and d using total derivatives.
 
 
   \end{enumerate}
