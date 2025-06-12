@@ -1,0 +1,176 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set\ \#3}
+\newcommand{\hmwkDueDate}{Jun 12, 2025}
+\newcommand{\hmwkClass}{ECON 219}
+\newcommand{\hmwkClassInstructor}{Dr. Sergio Urzua}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Problem 1
+\begin{homeworkProblem}
+  Suppose that a certain wine dealer is in possesion of a particular quantity of wine, which he can either sell at the present time 
+  $(i=0)$ for a sum of $K$ dollars of else store for some length of time and then sell at a higher value.
+  \begin{enumerate}
+    \item Present an expression for the growing value $(V)$ of the wine as a function of time. 
+    \item Explain under what assumptions the mazimization of profits is the same as maxing the sales reneveus (V)
+    \item Under the assumption of part b, present the maximization problem of the wine dealer. 
+    \item Present and intercept the first order condition of the preious problem. 
+    \item Present and interpret the second order condition of the wine dealer's problem. 
+    \item Obtain the optimum length of storage time. 
+    \item Confirm that the previous answer defines a maximum and not a minimum. 
+  \end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+  Conside rthe following firm's reneveus function:
+  $$R_1 = P_{10} Q_1 + P_{20}Q_2 $$
+  where $Q_s$ represent the output level of the two different products the firm produces. The firm's cost is 
+  assumedd to be: 
+  $$C =Q_1^2 + Q_1Q_1 + 2 Q_2^2$$
+  \begin{enumerate}
+    \item Present a plot of the marginal cost of the firm nwith reprect to its first productit .
+      interpret you results. 
+    \item Present the profit function of the fir. 
+    \item Present the firt order condition of the firm's problem. Solve for the optimal level of th e produciotn. 
+    \item Depict the supply function of both goods.
+    \item Check the second order condition of the optimization problem. 
+    \item $c$ and $b$ using total derivatives. 
+  \end{enumerate}
+\end{homeworkProblem}
+
+\end{document}
+
