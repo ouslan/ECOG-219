@@ -8,7 +8,8 @@
 \usepackage{tikz}
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
-
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usetikzlibrary{automata,positioning}
 
 %
@@ -146,29 +147,144 @@
   $(i=0)$ for a sum of $K$ dollars of else store for some length of time and then sell at a higher value.
   \begin{enumerate}
     \item Present an expression for the growing value $(V)$ of the wine as a function of time. 
-    \item Explain under what assumptions the mazimization of profits is the same as maxing the sales reneveus (V)
+      
+  \[
+  V(t) = K e^{rt}
+  \]
+
+  where:
+  \begin{itemize}
+    \item \( K \): initial value of the wine at time \( t = 0 \),
+    \item \( r \): appreciation rate,
+    \item \( t \): time stored,
+    \item \( V(t) \): value after time \( t \).
+  \end{itemize}
+    \item Explain under what assumptions the maximization of profits is the same as maxing the sales renueves (V)
+
+ Let \( \rho \) be the discount rate (opportunity cost of capital). The present value of selling at time \( t \) is:
+
+  \[
+  \text{PV}(t) = V(t) e^{-\rho t} = K e^{(r - \rho)t}
+  \]
+
+  Maximizing profit is equivalent to maximizing \( V(t) \) only when \( \rho = 0 \), i.e., there is no discounting.
     \item Under the assumption of part b, present the maximization problem of the wine dealer. 
+        Assuming storage cost \( C(t) \), the profit is:
+
+  \[
+  \Pi(t) = V(t) - C(t) = K e^{rt} - C(t)
+  \]
+
+  The wine dealer solves:
+
+  \[
+  \max_{t \geq 0} \Pi(t) = K e^{rt} - C(t)
+  \]
+
     \item Present and intercept the first order condition of the preious problem. 
+       Take derivative of \( \Pi(t) \):
+
+  \[
+  \frac{d\Pi}{dt} = \frac{dV}{dt} - \frac{dC}{dt} = K r e^{rt} - C'(t)
+  \]
+
+  FOC:
+
+  \[
+  K r e^{rt^*} = C'(t^*)
+  \]
+
+  \textit{Interpretation:} At the optimum time \( t^* \), marginal benefit equals marginal cost.
+
     \item Present and interpret the second order condition of the wine dealer's problem. 
+       The second derivative:
+
+  \[
+  \frac{d^2\Pi}{dt^2} = K r^2 e^{rt} - C''(t)
+  \]
+
+  SOC for a maximum:
+
+  \[
+  K r^2 e^{rt^*} < C''(t^*)
+  \]
+
+  \textit{Interpretation:} Marginal cost increases faster than marginal benefit at \( t^* \).
+
     \item Obtain the optimum length of storage time. 
+       From the FOC:
+
+  \[
+  K r e^{rt^*} = C'(t^*)
+  \]
+
+  Example: If \( C(t) = ct \), then \( C'(t) = c \). Solve:
+
+  \[
+  K r e^{rt^*} = c \Rightarrow e^{rt^*} = \frac{c}{K r} \Rightarrow t^* = \frac{1}{r} \ln\left( \frac{c}{K r} \right)
+  \]
     \item Confirm that the previous answer defines a maximum and not a minimum. 
+       With \( C(t) = c t \), \( C''(t) = 0 \). So second derivative is:
+
+  \[
+  \frac{d^2\Pi}{dt^2} = K r^2 e^{rt} > 0
+  \]
+
+  In this case, we get a minimum unless a more realistic cost function like \( C(t) = ct + dt^2 \) is used, where:
+
+  \[
+  C'(t) = c + 2dt, \quad C''(t) = 2d
+  \]
+
+  Then:
+
+  \[
+  \text{SOC: } K r^2 e^{rt^*} < 2d \quad \text{(ensures maximum)}
+  \]
   \end{enumerate}
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
-  Conside rthe following firm's reneveus function:
+  Consider the following firm's renueves function:
   $$R_1 = P_{10} Q_1 + P_{20}Q_2 $$
   where $Q_s$ represent the output level of the two different products the firm produces. The firm's cost is 
-  assumedd to be: 
+  assumed to be: 
   $$C =Q_1^2 + Q_1Q_1 + 2 Q_2^2$$
   \begin{enumerate}
-    \item Present a plot of the marginal cost of the firm nwith reprect to its first productit .
-      interpret you results. 
-    \item Present the profit function of the fir. 
-    \item Present the firt order condition of the firm's problem. Solve for the optimal level of th e produciotn. 
+    \item Present a plot of the marginal cost of the firm with refract to its first productita .
+      Interpret you results. 
+      \[
+MC_1 = \frac{\partial C}{\partial Q_1} = \frac{\partial}{\partial Q_1} (2Q_1^2 + 2Q_2^2) = 4Q_1
+\]
+
+The marginal cost increases linearly with the quantity of the first good. This indicates increasing marginal cost or decreasing returns to scale for \( Q_1 \).
+    \item Present the profit function of the firm. 
+      \[
+\pi(Q_1, Q_2) = P_{10} Q_1 + P_{20} Q_2 - (2Q_1^2 + 2Q_2^2)
+\]
+    \item Present the firm order condition of the firm's problem. Solve for the optimal level of the production. 
+      \begin{align*}
+\frac{\partial \pi}{\partial Q_1} &= P_{10} - 4Q_1 = 0 \quad \Rightarrow \quad Q_1^* = \frac{P_{10}}{4} \\
+\frac{\partial \pi}{\partial Q_2} &= P_{20} - 4Q_2 = 0 \quad \Rightarrow \quad Q_2^* = \frac{P_{20}}{4}
+\end{align*}
     \item Depict the supply function of both goods.
+      \[
+Q_1(P_{10}) = \frac{P_{10}}{4}, \quad Q_2(P_{20}) = \frac{P_{20}}{4}
+\]
     \item Check the second order condition of the optimization problem. 
+      \[
+\frac{\partial^2 \pi}{\partial Q_1^2} = -4, \quad \frac{\partial^2 \pi}{\partial Q_2^2} = -4, \quad \frac{\partial^2 \pi}{\partial Q_1 \partial Q_2} = 0
+\]
+\[
+H = \begin{bmatrix}
+-4 & 0 \\
+0 & -4
+\end{bmatrix}
+\]
     \item $c$ and $b$ using total derivatives. 
+      \[
+\frac{dQ_1}{dP_{10}} = \frac{1}{4}, \quad \frac{dQ_2}{dP_{20}} = \frac{1}{4}
+\]
   \end{enumerate}
 \end{homeworkProblem}
 
