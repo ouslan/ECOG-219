@@ -152,30 +152,180 @@
 	\]
 	\begin{enumerate}
 		\item Define the profit maximization problem of the firm.
+		      \[
+			      \Pi = R(Q_1, Q_2, Q_3) - C(Q_1 + Q_2 + Q_3)
+		      \]
+
+		      Substituting the expressions for revenue and cost:
+
+		      \[
+			      \Pi = \left( R_1(Q_1) + R_2(Q_2) + R_3(Q_3) \right) - C(Q_1 + Q_2 + Q_3)
+		      \]
+
+		      Thus, the firm's profit maximization problem is:
+
+		      \[
+			      \max_{Q_1, Q_2, Q_3} \, \left( R_1(Q_1) + R_2(Q_2) + R_3(Q_3) - C(Q_1 + Q_2 + Q_3) \right)
+		      \]
 		\item Present the first-order condition (set of equations).
+		      \[
+			      \frac{\partial \Pi}{\partial Q_1} = \frac{dR_1(Q_1)}{dQ_1} - \frac{dC(Q)}{dQ_1} = 0
+		      \]
+
+		      \[
+			      \frac{\partial \Pi}{\partial Q_2} = \frac{dR_2(Q_2)}{dQ_2} - \frac{dC(Q)}{dQ_2} = 0
+		      \]
+
+		      \[
+			      \frac{\partial \Pi}{\partial Q_3} = \frac{dR_3(Q_3)}{dQ_3} - \frac{dC(Q)}{dQ_3} = 0
+		      \]
+
 		\item Provide an economic interpretation to the firs order condition. Specifically,
 		      connect marginal revenues and demand elasticities to explain under what condition the frim
 		      will change a higher price.
+		      \[
+			      MR_1(Q_1) = MC(Q)
+		      \]
+		      \[
+			      MR_2(Q_2) = MC(Q)
+		      \]
+		      \[
+			      MR_3(Q_3) = MC(Q)
+		      \]
+
+		      Where:
+		      - \(MR_i(Q_i) = \frac{dR_i}{dQ_i}\) is the marginal revenue in market \(i\).
+		      - \(MC(Q) = \frac{dC}{dQ}\) is the marginal cost of production, where \(Q = Q_1 + Q_2 + Q_3\).
+
+		      This implys that the firm will set the marginal revenue equal to marginal cost for each market.
+
 		\item Present the Hessian of the firm's objective function.
+		      \[
+			      \Pi(Q_1, Q_2, Q_3) = R_1(Q_1) + R_2(Q_2) + R_3(Q_3) - C(Q_1 + Q_2 + Q_3)
+		      \]
+
+		      The Hessian matrix \(H\) is given by:
+
+		      \[
+			      H =
+			      \begin{bmatrix}
+				      \frac{\partial^2 \Pi}{\partial Q_1^2}            & \frac{\partial^2 \Pi}{\partial Q_1 \partial Q_2} & \frac{\partial^2 \Pi}{\partial Q_1 \partial Q_3} \\
+				      \frac{\partial^2 \Pi}{\partial Q_2 \partial Q_1} & \frac{\partial^2 \Pi}{\partial Q_2^2}            & \frac{\partial^2 \Pi}{\partial Q_2 \partial Q_3} \\
+				      \frac{\partial^2 \Pi}{\partial Q_3 \partial Q_1} & \frac{\partial^2 \Pi}{\partial Q_3 \partial Q_2} & \frac{\partial^2 \Pi}{\partial Q_3^2}
+			      \end{bmatrix}
+		      \]
+
+		      Where the second derivatives are:
+
+		      \[
+			      \frac{\partial^2 \Pi}{\partial Q_i^2} = \frac{d^2 R_i(Q_i)}{dQ_i^2} - \frac{d^2 C(Q)}{dQ_i^2}
+		      \]
+
+		      \[
+			      \frac{\partial^2 \Pi}{\partial Q_i \partial Q_j} = \frac{d^2 R_i(Q_i)}{dQ_i dQ_j} - \frac{d^2 C(Q)}{dQ_i dQ_j}
+		      \]
 		\item Assume each of the revenue function is concave and convex cost. Would this structure
 		      secure the second- order condition? Explain.
+		      \begin{enumerate}
+			      \item \textbf{Concave Revenue Functions:} If the revenue functions \(R_1(Q_1)\), \(R_2(Q_2)\), and \(R_3(Q_3)\)
+			            are concave, their second derivatives will be non-positive. This implies that the marginal revenue functions
+			            are decreasing, which is necessary for profit maximization.
+			      \item \textbf{Convex Cost Function:} If the cost function \(C(Q)\) is convex, then its second derivative will
+			            be non-decreasing (positive), meaning the marginal cost increases with total output.
+		      \end{enumerate}
+
 	\end{enumerate}
 \end{homeworkProblem}
 
-%problem 1 
-Let $U = U(x,y)$ be the utility function of the agent, $x$ and $y$ repesents the good. Assume positive
-marginal utilities. Let $P_X$, $P_y$ be the associated prices and $I$ income.
-\begin{enumerate}
-	\item State the agent's utility maximization problem.
-	\item Present the Langrangian funciton.
-	\item Derive and interpret the first order condition. In your analysis, you must include the Langrge multiplier.
-	\item Present a graphical interpretation of the optimality condition (include indifferent curves and budget sets).
-	\item Present the second- order condition and descrive the condition under which one could secure a maximum.
-	\item Solve the previous questions but assuming:
-	      \begin{enumerate}
-		      \item $U(x,y) = x^a y^b$ where $a + b <1 $
-		      \item $U(x,y) = ax + by$
-		      \item $U(x,y) = Min(x,y)$
-	      \end{enumerate}
-\end{enumerate}
+%problem 2 
+\begin{homeworkProblem}
+	Let $U = U(x,y)$ be the utility function of the agent, $x$ and $y$ repesents the good. Assume positive
+	marginal utilities. Let $P_X$, $P_y$ be the associated prices and $I$ income.
+	\begin{enumerate}
+		\item State the agent's utility maximization problem.
+		      \[
+			      \max_{x, y} U(x, y)
+		      \]
+		      subject to the budget constraint:
+		      \[
+			      P_x x + P_y y = I
+		      \]
+		      where \( x, y \geq 0 \) and \( I, P_x, P_y > 0 \).
+		\item Present the Langrangian funciton.
+		      \[
+			      \mathcal{L}(x, y, \lambda) = U(x, y) + \lambda \left( I - P_x x - P_y y \right)
+		      \]
+		\item Derive and interpret the first order condition. In your analysis, you must include the Langrge multiplier.
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial x} = \frac{\partial U(x, y)}{\partial x} - \lambda P_x = 0
+		      \]
+		      \[
+			      \frac{\partial U(x, y)}{\partial x} = \lambda P_x
+		      \]
+
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial y} = \frac{\partial U(x, y)}{\partial y} - \lambda P_y = 0
+		      \]
+		      \[
+			      \frac{\partial U(x, y)}{\partial y} = \lambda P_y
+		      \]
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial \lambda} = I - P_x x - P_y y = 0
+		      \]
+		      \[
+			      P_x x + P_y y = I \quad
+		      \]
+		\item Present a graphical interpretation of the optimality condition (include indifferent curves and budget sets).
+
+		      \[
+			      P_x x + P_y y = I
+		      \]
+		      \[
+			      \text{MRS} = \frac{\partial U(x, y) / \partial x}{\partial U(x, y) / \partial y} = \frac{P_x}{P_y}
+		      \]
+
+		      This is the optimality condition.
+
+		\item Present the second- order condition and descrive the condition under which one could secure a maximum.
+		\item Solve the previous questions but assuming:
+		      \begin{enumerate}
+			      \item $U(x,y) = x^a y^b$ where $a + b <1 $
+			            \[
+				            \mathcal{L}(x, y, \lambda) = x^a y^b + \lambda (I - P_x x - P_y y)
+			            \]
+			            \[
+				            a x^{a-1} y^b = \lambda P_x \quad \text{(FOC for \( x \))}
+			            \]
+			            \[
+				            b x^a y^{b-1} = \lambda P_y \quad \text{(FOC for \( y \))}
+			            \]
+			            \[
+				            \frac{a}{b} = \frac{P_x}{P_y}
+			            \]
+			      \item $U(x,y) = ax + by$
+			            \[
+				            \mathcal{L}(x, y, \lambda) = ax + by + \lambda (I - P_x x - P_y y)
+			            \]
+			            \[
+				            a = \lambda P_x \quad \text{(FOC for \( x \))}
+			            \]
+			            \[
+				            b = \lambda P_y \quad \text{(FOC for \( y \))}
+			            \]
+			            \[
+				            \lambda = \frac{a}{P_x} = \frac{b}{P_y}
+			            \]
+			      \item $U(x,y) = Min(x,y)$
+			            \[
+				            \mathcal{L}(x, y, \lambda) = \min(x, y) + \lambda (I - P_x x - P_y y)
+			            \]
+			            \[
+				            P_x x + P_y x = I
+			            \]
+
+
+		      \end{enumerate}
+	\end{enumerate}
+
+\end{homeworkProblem}
 \end{document}
