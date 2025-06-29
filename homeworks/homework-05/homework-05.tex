@@ -94,17 +94,13 @@
 }
 
 
-%
 % Basic Document Settings
-%
-
 \topmargin=-0.45in
 \evensidemargin=0in
 \oddsidemargin=0in
 \textwidth=6.5in
 \textheight=9.0in
 \headsep=0.25in
-
 \linespread{1.1}
 
 \pagestyle{fancy}
@@ -113,10 +109,8 @@
 \rhead{\firstxmark}
 \lfoot{\lastxmark}
 \cfoot{\thepage}
-
 \renewcommand\headrulewidth{0.4pt}
 \renewcommand\footrulewidth{0.4pt}
-
 \setlength\parindent{0pt}
 
 %
@@ -374,16 +368,86 @@
 	is normally distributed with mean $0$ and variance $\sigma^2$.
 	\begin{enumerate}
 		\item Present the likelihood function and optimization problem
+
+		      \[
+			      Y = X\beta + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2 I)
+		      \]
+		      \[
+			      L(\beta, \sigma^2) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(y_i - x_i^\top \beta)^2}{2\sigma^2}\right)
+		      \]
+		      \[
+			      \ell(\beta, \sigma^2) = -\frac{n}{2} \log(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^n (y_i - x_i^\top \beta)^2
+		      \]
+		      \[
+			      \max_{\beta, \sigma^2} \ell(\beta, \sigma^2)
+			      \quad \Leftrightarrow \quad
+			      \min_{\beta, \sigma^2} \frac{1}{2\sigma^2} (Y - X\beta)^\top (Y - X\beta) + \frac{n}{2} \log \sigma^2
+		      \]
 		\item Present the first and second order conditions.
+
+		      Let \( Q(\beta) = (Y - X\beta)^\top (Y - X\beta) \).
+
+		      \subsection*{First-order Conditions}
+
+		      Gradient w.r.t. \( \beta \):
+		      \[
+			      \frac{\partial \ell}{\partial \beta} = \frac{1}{\sigma^2} X^\top (Y - X\beta)
+			      \Rightarrow
+			      X^\top Y = X^\top X \hat{\beta} \Rightarrow \hat{\beta} = (X^\top X)^{-1} X^\top Y
+		      \]
+
+		      Gradient w.r.t. \( \sigma^2 \):
+		      \[
+			      \frac{\partial \ell}{\partial \sigma^2} = -\frac{n}{2\sigma^2} + \frac{1}{2\sigma^4} Q(\beta)
+			      \Rightarrow
+			      \hat{\sigma}^2 = \frac{1}{n} (Y - X\hat{\beta})^\top (Y - X\hat{\beta})
+		      \]
+
+		      \subsection*{Second-order Conditions}
+
+		      \[
+			      \frac{\partial^2 \ell}{\partial \beta \partial \beta^\top} = -\frac{1}{\sigma^2} X^\top X \quad \text{(Negative definite)}
+		      \]
+
+		      \[
+			      \frac{\partial^2 \ell}{\partial (\sigma^2)^2} = \frac{n}{2\sigma^4} - \frac{2Q(\beta)}{\sigma^6}
+		      \]
 		\item Generate a sample of $1000$ observations under the following parameterization:
 		      $$Y=X\beta + \epsilon = \beta_0 + \beta_1X + \epsilon$$
 		      where $\beta_0= 0.5, \quad \beta_1= -0.75, \quad X \sim (0.5, 2)$, and $\epsilon \sim N(0,1)$.Present
 		      summary statistics
+
+		      \begin{table}[!ht]
+			      \centering
+			      \begin{tabular}{lrr}
+				      \hline
+				      Statistic & Y           & X           \\
+				      \hline
+				      count     & 1000.000000 & 1000.000000 \\
+				      mean      & -0.480080   & 1.259171    \\
+				      std       & 1.018840    & 0.440379    \\
+				      min       & -4.134258   & 0.500444    \\
+				      25\%      & -1.163643   & 0.873378    \\
+				      50\%      & -0.479364   & 1.277332    \\
+				      75\%      & 0.173818    & 1.634770    \\
+				      max       & 3.884550    & 1.999606    \\
+				      \hline
+			      \end{tabular}
+			      \caption{Descriptive statistics for variables Y and X}
+		      \end{table}
+
 		\item Implement the Newton-Raphson algorithm for the MLE problem.
 		      \begin{enumerate}
 			      \item Report the estimated values for the three parameters.
+			            \begin{pythonbox}[Implementacion de distribución Exponencial]
+				            \inputminted{python}{code/descriptive.py}
+			            \end{pythonbox}
 			      \item Compute the Hessian at the estimated values. How is this connected
 			            to the estimators' variance covariance MLE matrix?
+			            \begin{pythonbox}[Implementacion de distribución Exponencial]
+				            \inputminted{python}{code/optimize.py}
+			            \end{pythonbox}
+			            Estimated parameters: [ 0.50858469 -0.78517093  0.91755727]
 		      \end{enumerate}
 	\end{enumerate}
 \end{homeworkProblem}
