@@ -1,0 +1,188 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set\ \#5}
+\newcommand{\hmwkDueDate}{Jun 26, 2025}
+\newcommand{\hmwkClass}{ECON 219}
+\newcommand{\hmwkClassInstructor}{Dr. Sergio Urzua}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Problem 1
+\begin{homeworkProblem}
+	Asume the following smooth production function:
+	$$Q= Q(K,L)$$
+	with positive marginal productivities. Let $w$ and $r$ the prices of
+	labor and capital, respectively.
+	\begin{enumerate}
+		\item Formulate the problem of minimizing costs subject to the technology.
+
+		\item Explain under what conditions you might have to consider the xase of corner
+		      solution (optimal labor or capital equal to zero). Provide an example.
+		\item Assuming interior solution present the first order conditions.
+		      Provide an economic interpretation to the optimality condition. In you answer,
+		      refer to the Langrange multiplier.
+		\item Provide a graphical representation of the resulting optimal input combination.
+		\item Present the second order condition.
+		      Explain how the strict convexity of the isoquants would ensure a minimum cost.
+		      Explain how quasi-concave production function can generate everywhere strictly convex,
+		      downard-sloping isoquants.
+		\item Now, assume $Q=AL^\alpha K^\beta$. Show that the expansion path (optimal combinations
+		      of capital and labor for different isocosts) is characterized by a linear combination.
+		\item Show the previous result holds for all homogeneous produciton functions.
+	\end{enumerate}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+	Consider the following model:
+	$$Y=X\beta + \epsilon$$
+	where the standard assumption securing OLS delivers BLUE estimators hold. Assume the error terms
+	is normally distributed with mean $0$ and variance $\sigma^2$.
+	\begin{enumerate}
+		\item Present the likeligood function and optimization problem
+		\item Present the first and second order conditions.
+		\item Generate a sample of $1000$ observations under the following parameterization:
+		      $$Y=X\beta + \epsilon = \beta_0 + \beta_1X + \epsilon$$
+		      where $\beta_0= 0.5, \quad \beta_1= -0.75, \quad X \sim (0.5, 2)$, and $\epsilon \sim N(0,1)$.Present
+		      summary statistics
+		\item Implement the Newton-Raphson algorithm for the MLE problem.
+		      \begin{enumerate}
+			      \item Report the estimated values for the three parameters.
+			      \item Compute the Hessina at the estimated values. How is this connected
+			            to the estimators' variance covariance MLE matrix?
+		      \end{enumerate}
+	\end{enumerate}
+\end{homeworkProblem}
+\end{document}
